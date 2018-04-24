@@ -8,7 +8,6 @@ var mongoose = require('mongoose');
 
 mongoose.connect(process.env.DB);
 
-
 var indexRouter = require('./routes/index');
 
 var app = express();
@@ -42,3 +41,4 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+app.listen(process.env.PORT || 8080);
