@@ -1,6 +1,6 @@
 # Web API - Ecommerce
 
-Author: 
+Author:  
 Duy Pham  
 Soo Kim  
 Yuzhe Lu  
