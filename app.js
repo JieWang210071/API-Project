@@ -4,6 +4,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var expressHBS = require('express-handlebars');
+var mongoose = require('mongoose');
+
+mongoose.connect(process.env.DB);
+
 
 var indexRouter = require('./routes/index');
 
