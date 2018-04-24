@@ -1,1 +1,0 @@
-> The Code of Conduct now lives in the 'Contributing' section of the documentation: [http://www.ymple.com/template/contribute.html](http://www.ymple.com/template/contribute.html)
