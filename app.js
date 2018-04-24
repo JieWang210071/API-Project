@@ -6,8 +6,11 @@ var logger = require('morgan');
 var expressHBS = require('express-handlebars');
 var mongoose = require('mongoose');
 var session = require('express-session');
+var passport = require('passport');
+var flash = require('connect-flash');
 
 mongoose.connect(process.env.DB);
+require('./config/passport');
 
 var indexRouter = require('./routes/index');
 
@@ -22,6 +25,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(session({secret: process.env.SECRET, resave: false, saveUninitialized: false}));
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
