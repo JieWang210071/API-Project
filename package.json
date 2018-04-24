@@ -12,9 +12,11 @@
     "dotenv": "^5.0.1",
     "express": "~4.16.0",
     "express-handlebars": "^3.0.0",
+    "geoip-lite": "^1.2.1",
     "hbs": "~4.0.1",
     "http-errors": "~1.6.2",
     "mongoose": "^5.0.16",
-    "morgan": "~1.9.0"
+    "morgan": "~1.9.0",
+    "public-ip": "^2.4.0"
   }
 }
