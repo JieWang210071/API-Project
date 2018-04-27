@@ -18,14 +18,14 @@ router.get('/', function(req, res, next) {
 
 router.get('/add-to-cart/:id', function(req, res, next){
    var productID = req.params.id;
-   var cart = new Cart(req.session.cart ? req.session.cart : {items: {}});
+   var cart = new Cart(req.session.cart ? req.session.cart : {});
 
    Product.findById(productID, function(err, product) {
       if(err){
           return res.redirect('/');
       }
       cart.add(product, product.id);
-      res.session.cart = cart;
+      req.session.cart = cart;
       console.log(req.session.cart);
       res.redirect('/');
    });
