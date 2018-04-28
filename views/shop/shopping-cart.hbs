@@ -1,0 +1,64 @@
+{{# if products }}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-10 col-md-offset-1">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th class="text-center">Price</th>
+                        <th class="text-center">Total</th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{# each products}}
+                        <tr>
+                            <td class="col-sm-8 col-md-6">
+                                <div class="media">
+                                    <div class="media-body">
+                                        <h5 class="media-heading">{{ this.item.title }}</h5>
+                                    </div>
+                                </div></td>
+                            <td class="col-sm-1 col-md-1 text-center"><strong>{{ this.qty }}</strong></td>
+                            <td class="col-sm-1 col-md-1 text-center"><strong>${{ this.item.price }}</strong></td>
+                            <td class="col-sm-1 col-md-1 text-center"><strong>${{ this.price }}</strong></td>
+                            <td class="col-sm-1 col-md-1">
+                                <button type="button" class="btn btn-danger">
+                                    <i class="fas fa-times"></i> Remove
+                                </button>
+                            </td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td>   </td>
+                    <td>   </td>
+                    <td>   </td>
+                    <td><h3>Total</h3></td>
+                    <td class="text-right"><h3>${{ totalPrice }}</h3></td>
+                </tr>
+                <tr>
+                    <td>   </td>
+                    <td>   </td>
+                    <td>   </td>
+                    <td>
+                        <a href="/" class="btn btn-default" role="button"><i class="fas fa-shopping-cart"></i> Continue Shopping</a>
+                    <td>
+                        <a href="#" class="btn btn-success" role="button"><i class="fas fa-shopping-cart"></i> Checkout</a>
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+{{else}}
+<div class="row">
+    <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+        <h2>No Items in Cart</h2>
+    </div>
+</div>
+{{/if}}

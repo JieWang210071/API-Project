@@ -9,7 +9,7 @@ module.exports = function Cart(oldCart){
             storedItem = this.items[id] = {item: item, qty:0, price:0};
         }
         storedItem.qty++;
-        storedItem.price = storedItem.item.price * storedItem.qty;
+        storedItem.price = (storedItem.item.price * storedItem.qty).toFixed(2);
         this.totalQty++;
         this.totalPrice += storedItem.item.price;
     }
